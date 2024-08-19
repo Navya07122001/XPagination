@@ -7,6 +7,7 @@ const getData=async()=> {
     }
     catch(e){
         console.error(e)
+        alert("failed to fetch data")
     }
     
 }
