@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import data from '../../data'
+import {getData} from '../../data'
 import styles from './Pagination.module.css'
 const Pagination= () => {
   const [tabledata,setTabledata]=useState([]);
@@ -20,8 +20,8 @@ const Pagination= () => {
  
   useEffect(()=>{
     const fetchData=async()=>{
-        const tabdata=await data;
-        if(data.length>0)
+        const tabdata=await getData();
+        if(tabdata.length>0)
         setTabledata(tabdata);
         else
         {
