@@ -17,11 +17,18 @@ const Pagination= () => {
       setCurrentPage((prev)=>prev+1);
     }
   }
-  const fetchData=async()=>{
-    const tabdata=await data;
-    setTabledata(tabdata);
-  }
+ 
   useEffect(()=>{
+    const fetchData=async()=>{
+        const tabdata=await data;
+        if(data.length>0)
+        setTabledata(tabdata);
+        else
+        {
+            console.log("error")
+            alert("failed to fetch data")
+        }
+      }
      fetchData();
   },[])
   useEffect(() => {
